@@ -139,12 +139,9 @@ let package = Package(
                 ], 
                 publicHeadersPath:"src/"),
         .target(name: "Availability", 
-                path: "components/Availability"),
+                path: "components/Availability/src/"),
         .target(name: "Application", 
-                path: "components/private/Application",
-                sources: [
-                    "components/private/Application/src/*.{h,m}"
-                ], 
+                path: "components/private/Application/src/",
                 publicHeadersPath:"components/private/Application/src/")
     ]
 )
