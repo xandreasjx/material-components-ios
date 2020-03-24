@@ -24,8 +24,8 @@ let package = Package(
                 ], 
                 path: "components/TextFields/src/",
                 sources: [
-                    "src/*.{h,m}",
-                    "src/private/*.{h,m}"
+                    "components/TextFields/src/*.{h,m}",
+                    "components/TextFields/src/private/*.{h,m}"
                 ],
                 publicHeadersPath: "components/TextFields/src/"),
         .target(name: "AnimationTiming",
@@ -143,7 +143,6 @@ let package = Package(
                 path: "components/Availability/src/",
                 sources: [
                     "components/Availability/src/*.{h,m}",
-                    "components/Availability/src/private/*.{h,m}"
                 ],
                 publicHeadersPath:"components/Availability/src/"),
         .target(name: "Application", 
