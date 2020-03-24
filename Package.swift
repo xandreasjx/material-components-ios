@@ -91,7 +91,8 @@ let package = Package(
                 dependencies: [
                     "Availability",
                 ], 
-                path: "components/private/Color/src/"),
+                path: "components/private/Color/src/",
+                publicHeadersPath:"components/private/Color/src/"),
         .target(name: "Palettes", 
                 path: "components/Palettes/src/",
                 sources: [
