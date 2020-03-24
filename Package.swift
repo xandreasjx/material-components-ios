@@ -65,7 +65,7 @@ let package = Package(
                     "src/MDCLegacyFontScheme.h",
                     "src/MDCTypographyScheme.h",
                     "src/MDCTypographyScheme.m",
-                    "src/Scheming/MaterialTypographyScheme+Scheming.h",
+                    "src/Scheming/MaterialTypographySchemeScheming.h",
                     "src/Scheming/MDCTypographyScheming.h",
                     "src/BasicFontScheme/"
                 ],
