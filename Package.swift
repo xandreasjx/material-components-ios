@@ -6,14 +6,14 @@ let package = Package(
     name: "Material Components iOS",
     platforms: [ .iOS(.v10) ],
     products: [
-        .library(name: "MaterialTextFields", targets: ["MaterialTextFieldsT"]),
+        .library(name: "MaterialComponents", targets: ["MaterialComponents"]),
     ],
     dependencies:[
         .package(url:"file:///Users/bernix01/extras/material-internationalization-ios", from: "2.0.0"),
         .package(url:"file:///Users/bernix01/extras/material-text-accessibility-ios", from: "2.0.0")
     ],
     targets: [
-        .target(name: "MaterialTextFieldsT", 
+        .target(name: "MaterialComponents", 
                 dependencies:[
                     .target(name:"AnimationTiming"),
                     .target(name:"Buttons"),
@@ -50,8 +50,11 @@ let package = Package(
         .target(name: "ShapeLibrary",
                 path: "components/ShapeLibrary/src/"),
         .target(name: "ColorScheme",
-                path: "components/schemes/Color/src/",
-                publicHeadersPath:"components/schemes/Color/src/"),
+                path: "components/schemes/Color/",
+                sources: [
+                    "src"
+                ],
+                publicHeadersPath:"src"),
         .target(name: "TypographyScheme",
                 path: "components/schemes/Typography/",
                 sources: [
