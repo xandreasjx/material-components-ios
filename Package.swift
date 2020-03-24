@@ -84,12 +84,12 @@ let package = Package(
                 ], 
                 path: "components/private/Color"),
         .target(name: "Palettes", 
-                path: "components/Palettes",
+                path: "components/Palettes/src/",
                 sources: [
-                    "src/*.{h,m}",
-                    "src/private/*.{h,m}"
+                    "components/Palettes/src/src/*.{h,m}",
+                    "components/Palettes/src/src/private/*.{h,m}"
                 ],
-                publicHeadersPath:"src/"),
+                publicHeadersPath:"components/Palettes/src/"),
         .target(name: "Ink",
                 dependencies: [
                     "Availability",
@@ -141,6 +141,10 @@ let package = Package(
                 publicHeadersPath:"src/"),
         .target(name: "Availability", 
                 path: "components/Availability/src/",
+                sources: [
+                    "components/Availability/src/*.{h,m}",
+                    "components/Availability/src/private/*.{h,m}"
+                ],
                 publicHeadersPath:"components/Availability/src/"),
         .target(name: "Application", 
                 path: "components/private/Application/src/",
