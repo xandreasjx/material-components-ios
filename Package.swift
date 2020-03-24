@@ -164,7 +164,7 @@ let package = Package(
                     "src/MaterialAvailability.h",
                     "src/MDCAvailability.h"
                 ],
-                publicHeadersPath:"components/Availability/src/"),
+                publicHeadersPath:"src"),
         .target(name: "Application", 
                 path: "components/private/Application/src/",
                 publicHeadersPath:"components/private/Application/src/")
