@@ -7,13 +7,13 @@ let package = Package(
     products: [
         .library(name: "MaterialTextFields", targets: ["MaterialTextField"]),
     ],
-    dependecies:[
-        .package(path:"../material-internationalization-ios"),
-        .package(path:"../material-text-accessibility-ios")
+    dependencies:[
+        .package(url:"file:///Users/bernix01/extras/material-internationalization-ios", from: "2.0.0"),
+        .package(url:"file:///Users/bernix01/extras/material-text-accessibility-ios", from: "2.0.0")
     ],
     targets: [
         .target(name: "MaterialTextFields", 
-                dependecies:[
+                dependencies:[
                     "AnimationTiming",
                     "Buttons",
                     "Elevation",
@@ -22,21 +22,11 @@ let package = Package(
                     "Palettes",
                     "MDFInternationalization"
                 ], 
-                path: "components/TextFields",
-                sources: [
-                    "components/TextFields/src/*.{h,m}",
-                    "components/TextFields/src/private/*.{h,m}"
-                ], 
-                publicHeadersPath:"components/TextFields/src"),
-        .target(name: "AnimationTiming", 
-                path: "components/AnimationTiming",
-                sources: [
-                    "components/AnimationTiming/src/*.{h,m}",
-                    "components/AnimationTiming/src/private/*.{h,m}"
-                ], 
-                publicHeadersPath:"components/AnimationTiming/src"),
+                path: "components/TextFields/"),
+        .target(name: "AnimationTiming",
+                path: "components/AnimationTiming/"),
         .target(name: "Buttons",
-                dependecies: [
+                dependencies: [
                     "MDFInternationalization",
                     "MDFTextAccessibility",
                     "Elevation",
@@ -55,7 +45,7 @@ let package = Package(
                 ], 
                 publicHeadersPath:"components/Buttons/src"),
         .target(name: "Elevation",
-                dependecies: [
+                dependencies: [
                     "Availability",
                     "Color",
                     "Math"
@@ -67,7 +57,7 @@ let package = Package(
                 ], 
                 publicHeadersPath:"components/Elevation/src"),
         .target(name: "Typography",
-                dependecies: [
+                dependencies: [
                     "Application",
                     "Math"
                 ], 
@@ -84,7 +74,7 @@ let package = Package(
                 ], 
                 publicHeadersPath:"components/private/Math/src"),
         .target(name: "Color",
-                dependecies: [
+                dependencies: [
                     "Availability",
                     "Color"
                 ], 
@@ -101,7 +91,7 @@ let package = Package(
                 ],
                 publicHeadersPath:"components/Palettes/src"),
         .target(name: "Ink",
-                dependecies: [
+                dependencies: [
                     "Availability",
                     "Color",
                     "Math"
@@ -113,7 +103,7 @@ let package = Package(
                 ], 
                 publicHeadersPath:"components/Ink/src"),
         .target(name: "Ripple",
-                dependecies:[
+                dependencies:[
                     "AnimationTiming",
                     "Availability",
                     "Color",
@@ -138,7 +128,7 @@ let package = Package(
                 ], 
                 publicHeadersPath:"components/ShadowLayer/src"),
         .target(name: "Shapes",
-                dependecies:[
+                dependencies:[
                     "ShadowLayer",
                     "Color",
                     "Math"
