@@ -21,7 +21,7 @@ let package = Package(
                     .target(name:"Typography"),
                     .target(name:"Math"),
                     .target(name:"Palettes"),
-                    .target(name:"Container")
+                    .target(name:"Container"),
                     "MDFInternationalization"
                 ], 
                 path: "components/TextFields/src/"),
