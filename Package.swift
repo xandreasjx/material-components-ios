@@ -59,6 +59,8 @@ let package = Package(
                 path: "components/schemes/Typography/",
                 sources: [
                     "src",
+                    "src/schemes",
+                    "src/BasicFontScheme"
                 ]),
         .target(name: "Buttons",
                 dependencies: [
@@ -130,13 +132,16 @@ let package = Package(
         .target(name: "ShadowElevations", 
                 path: "components/ShadowElevations/",
                 sources: [
-                    "src",
+                    "src/",
                 ], 
                 publicHeadersPath:"components/ShadowElevations/src/"),
         .target(name: "ShadowLayer", 
+                dependencies: [
+                    .target(name:"ShadowElevations")
+                ],
                 path: "components/ShadowLayer/",
                 sources: [
-                    "src",
+                    "src/",
                 ], 
                 publicHeadersPath:"components/ShadowLayer/src/"),
         .target(name: "Shapes",
@@ -150,9 +155,9 @@ let package = Package(
         .target(name: "Availability", 
                 path: "components/Availability/",
                 sources:[
-                    "src"
+                    "src/"
                 ],
-                publicHeadersPath:"src"),
+                publicHeadersPath:"components/Availability/src/"),
         .target(name: "Application", 
                 path: "components/private/Application/src/",
                 publicHeadersPath:"components/private/Application/src/")
