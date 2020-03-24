@@ -4,6 +4,7 @@ import PackageDescription
 
 let package = Package(
     name: "Material Components iOS",
+    platforms: [ .iOS(.v10) ],
     products: [
         .library(name: "MaterialTextFields", targets: ["MaterialTextFields"]),
     ],
@@ -14,13 +15,13 @@ let package = Package(
     targets: [
         .target(name: "MaterialTextFields", 
                 dependencies:[
-                    "AnimationTiming",
-                    "Buttons",
-                    "Elevation",
-                    "Typography",
-                    "Math",
-                    "Palettes",
-                    "MDFInternationalization"
+                    .target("AnimationTiming"),
+                    .target("Buttons"),
+                    .target("Elevation"),
+                    .target("Typography"),
+                    .target("Math"),
+                    .target("Palettes"),
+                    .target("MDFInternationalization")
                 ], 
                 path: "components/TextFields/src/",
                 sources: [
@@ -96,7 +97,7 @@ let package = Package(
                     "Color",
                     "Math"
                 ], 
-                path: "components/Ink",
+                path: "components/Ink/",
                 sources: [
                     "src/*.{h,m}",
                     "src/private/*.{h,m}"
@@ -133,7 +134,7 @@ let package = Package(
                     "Color",
                     "Math"
                 ], 
-                path: "components/Shapes",
+                path: "components/Shapes/",
                 sources: [
                     "src/*.{h,m}",
                     "src/private/*.{h,m}"
