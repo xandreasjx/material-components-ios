@@ -6,14 +6,14 @@ let package = Package(
     name: "Material Components iOS",
     platforms: [ .iOS(.v10) ],
     products: [
-        .library(name: "MaterialTextFields", targets: ["MaterialTextFields"]),
+        .library(name: "MaterialTextFields", targets: ["MaterialTextFieldsT"]),
     ],
     dependencies:[
         .package(url:"file:///Users/bernix01/extras/material-internationalization-ios", from: "2.0.0"),
         .package(url:"file:///Users/bernix01/extras/material-text-accessibility-ios", from: "2.0.0")
     ],
     targets: [
-        .target(name: "MaterialTextFields", 
+        .target(name: "MaterialTextFieldsT", 
                 dependencies:[
                     .target(name:"AnimationTiming"),
                     .target(name:"Buttons"),
@@ -23,12 +23,12 @@ let package = Package(
                     .target(name:"Palettes"),
                     "MDFInternationalization"
                 ], 
-                path: "components/TextFields/src/",
-                sources: [
-                    "components/TextFields/src/*.{h,m}",
-                    "components/TextFields/src/private/*.{h,m}"
-                ],
-                publicHeadersPath: "components/TextFields/src/"),
+                path: "components/TextFields/src/"),
+                // sources: [
+                //     "components/TextFields/src/*.{h,m}",
+                //     "components/TextFields/src/private/*.{h,m}"
+                // ],
+                // publicHeadersPath: "components/TextFields/src/"),
         .target(name: "AnimationTiming",
                 path: "components/AnimationTiming/src/"),
         .target(name: "Buttons",
