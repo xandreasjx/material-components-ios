@@ -21,6 +21,7 @@ let package = Package(
                     .target(name:"Typography"),
                     .target(name:"Math"),
                     .target(name:"Palettes"),
+                    .target(name:"Container")
                     "MDFInternationalization"
                 ], 
                 path: "components/TextFields/src/"),
@@ -31,6 +32,8 @@ let package = Package(
                 // publicHeadersPath: "components/TextFields/src/"),
         .target(name: "AnimationTiming",
                 path: "components/AnimationTiming/src/"),
+        .target(name: "Container",
+                path: "components/schemes/Container/src/"),
         .target(name: "Buttons",
                 dependencies: [
                     "MDFInternationalization",
