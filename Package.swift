@@ -76,13 +76,12 @@ let package = Package(
         .target(name: "Color",
                 dependencies: [
                     "Availability",
-                    "Color"
                 ], 
-                path: "components/schemes/Color",
+                path: "components/private/Color",
                 sources: [
-                    "components/schemes/Color/src/*.{h,m}"
+                    "components/private/Color/src/*.{h,m}"
                 ], 
-                publicHeadersPath:"components/schemes/Color/src"),
+                publicHeadersPath:"components/private/Color/src"),
         .target(name: "Palettes", 
                 path: "components/Palettes",
                 sources: [
