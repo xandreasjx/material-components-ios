@@ -22,11 +22,12 @@ let package = Package(
                     "Palettes",
                     "MDFInternationalization"
                 ], 
-                path: "components/TextFields/",
+                path: "components/TextFields/src/",
                 sources: [
                     "src/*.{h,m}",
                     "src/private/*.{h,m}"
-                ]),
+                ],
+                publicHeadersPath: "components/TextFields/src/"),
         .target(name: "AnimationTiming",
                 path: "components/AnimationTiming/src/"),
         .target(name: "Buttons",
@@ -72,7 +73,7 @@ let package = Package(
                 ], 
                 publicHeadersPath:"src/"),
         .target(name: "Math", 
-                path: "components/private/Math/",
+                path: "components/private/Math/src/",
                 sources: [
                     "components/private/Math/src/*.{h,m}",
                 ], 
