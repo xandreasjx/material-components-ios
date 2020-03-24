@@ -144,7 +144,7 @@ let package = Package(
                 ], 
                 path: "components/Shapes/src/"),
         .target(name: "Availability", 
-                path: "components/Availability/src"),
+                path: "components/Availability/src/"),
         .target(name: "Application", 
                 path: "components/private/Application/src/",
                 publicHeadersPath:"components/private/Application/src/")
