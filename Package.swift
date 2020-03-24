@@ -83,10 +83,9 @@ let package = Package(
                 ], 
                 path: "components/Elevation/",
                 sources: [
-                    "src/*.{h,m}",
-                    "src/private/*.{h,m}"
+                    "src"
                 ], 
-                publicHeadersPath:"src/"),
+                publicHeadersPath:"src"),
         .target(name: "Typography",
                 dependencies: [
                     .target(name: "Application"),
@@ -149,7 +148,11 @@ let package = Package(
                 path: "components/Shapes/src/",
                 publicHeadersPath:"components/Shapes/src/"),
         .target(name: "Availability", 
-                path: "components/Availability/src/"),
+                path: "components/Availability/",
+                sources:[
+                    "src"
+                ],
+                publicHeadersPath:"src"),
         .target(name: "Application", 
                 path: "components/private/Application/src/",
                 publicHeadersPath:"components/private/Application/src/")
