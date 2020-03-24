@@ -24,16 +24,16 @@ let package = Package(
                 ], 
                 path: "components/TextFields",
                 sources: [
-                    "components/TextFields/src/*.{h,m}",
-                    "components/TextFields/src/private/*.{h,m}"
+                    "src/*.{h,m}",
+                    "src/private/*.{h,m}"
                 ]),
         .target(name: "AnimationTiming",
                 path: "components/AnimationTiming/",
                 sources: [
-                    "components/AnimationTiming/src/*.{h,m}",
-                    "components/AnimationTiming/src/private/*.{h,m}"
+                    "src/*.{h,m}",
+                    "src/private/*.{h,m}"
                 ], 
-                publicHeadersPath:"components/AnimationTiming/src"),
+                publicHeadersPath:"src/"),
         .target(name: "Buttons",
                 dependencies: [
                     "MDFInternationalization",
@@ -49,10 +49,10 @@ let package = Package(
                 ], 
                 path: "components/Buttons",
                 sources: [
-                    "components/Buttons/src/*.{h,m}",
-                    "components/Buttons/src/private/*.{h,m}"
+                    "src/*.{h,m}",
+                    "src/private/*.{h,m}"
                 ], 
-                publicHeadersPath:"components/Buttons/src"),
+                publicHeadersPath:"src/"),
         .target(name: "Elevation",
                 dependencies: [
                     "Availability",
@@ -61,10 +61,10 @@ let package = Package(
                 ], 
                 path: "components/Elevation",
                 sources: [
-                    "components/Elevation/src/*.{h,m}",
-                    "components/Elevation/src/private/*.{h,m}"
+                    "src/*.{h,m}",
+                    "src/private/*.{h,m}"
                 ], 
-                publicHeadersPath:"components/Elevation/src"),
+                publicHeadersPath:"src/"),
         .target(name: "Typography",
                 dependencies: [
                     "Application",
@@ -72,32 +72,32 @@ let package = Package(
                 ], 
                 path: "components/Typography",
                 sources: [
-                    "components/Typography/src/*.{h,m}",
-                    "components/Typography/src/private/*.{h,m}"
+                    "src/*.{h,m}",
+                    "src/private/*.{h,m}"
                 ], 
-                publicHeadersPath:"components/Typography/src"),
+                publicHeadersPath:"src/"),
         .target(name: "Math", 
                 path: "components/private/Math",
                 sources: [
-                    "components/private/Math/src/*.{h,m}",
+                    "Math/src/*.{h,m}",
                 ], 
-                publicHeadersPath:"components/private/Math/src"),
+                publicHeadersPath:"Math/src/"),
         .target(name: "Color",
                 dependencies: [
                     "Availability",
                 ], 
                 path: "components/private/Color",
                 sources: [
-                    "components/private/Color/src/*.{h,m}"
+                    "Color/src/*.{h,m}"
                 ], 
-                publicHeadersPath:"components/private/Color/src"),
+                publicHeadersPath:"Color/src/"),
         .target(name: "Palettes", 
                 path: "components/Palettes",
                 sources: [
-                    "components/Palettes/src/*.{h,m}",
-                    "components/Palettes/src/private/*.{h,m}"
+                    "src/*.{h,m}",
+                    "src/private/*.{h,m}"
                 ],
-                publicHeadersPath:"components/Palettes/src"),
+                publicHeadersPath:"src/"),
         .target(name: "Ink",
                 dependencies: [
                     "Availability",
@@ -106,10 +106,10 @@ let package = Package(
                 ], 
                 path: "components/Ink",
                 sources: [
-                    "components/Ink/src/*.{h,m}",
-                    "components/Ink/src/private/*.{h,m}"
+                    "src/*.{h,m}",
+                    "src/private/*.{h,m}"
                 ], 
-                publicHeadersPath:"components/Ink/src"),
+                publicHeadersPath:"src/"),
         .target(name: "Ripple",
                 dependencies:[
                     "AnimationTiming",
@@ -119,22 +119,22 @@ let package = Package(
                 ], 
                 path: "components/Ripple",
                 sources: [
-                    "components/Ripple/src/*.{h,m}",
-                    "components/Ripple/src/private/*.{h,m}"
+                    "src/*.{h,m}",
+                    "src/private/*.{h,m}"
                 ], 
-                publicHeadersPath:"components/Ripple/src"),
+                publicHeadersPath:"src/"),
         .target(name: "ShadowElevations", 
                 path: "components/ShadowElevations",
                 sources: [
-                    "components/ShadowElevations/src/*.{h,m}",
+                    "src/*.{h,m}",
                 ], 
-                publicHeadersPath:"components/ShadowElevations/src"),
+                publicHeadersPath:"src/"),
         .target(name: "ShadowLayer", 
                 path: "components/ShadowLayer",
                 sources: [
-                    "components/ShadowLayer/src/*.{h,m}",
+                    "src/*.{h,m}",
                 ], 
-                publicHeadersPath:"components/ShadowLayer/src"),
+                publicHeadersPath:"src/"),
         .target(name: "Shapes",
                 dependencies:[
                     "ShadowLayer",
@@ -143,21 +143,21 @@ let package = Package(
                 ], 
                 path: "components/Shapes",
                 sources: [
-                    "components/Ripple/src/*.{h,m}",
-                    "components/Ripple/src/private/*.{h,m}"
+                    "src/*.{h,m}",
+                    "src/private/*.{h,m}"
                 ], 
-                publicHeadersPath:"components/Ripple/src"),
+                publicHeadersPath:"src/"),
         .target(name: "Availability", 
                 path: "components/Availability",
                 sources: [
-                    "components/Availability/src/*.{h,m}",
+                    "src/*.{h,m}",
                 ], 
-                publicHeadersPath:"components/Availability/src"),
+                publicHeadersPath:"src/"),
         .target(name: "Application", 
                 path: "components/private/Application",
                 sources: [
-                    "components/private/Application/src/*.{h,m}"
+                    "src/*.{h,m}"
                 ], 
-                publicHeadersPath:"components/private/Application/src")
+                publicHeadersPath:"src")
     ]
 )
