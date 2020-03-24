@@ -63,7 +63,7 @@ let package = Package(
                 sources: [
                     "src/",
                     "src/Scheming/MaterialTypographyScheme+Scheming.h",
-                    "src/Scheming/MDCTypographyScheming.h"
+                    "src/Scheming/MDCTypographyScheming.h",
                     "src/BasicFontScheme/"
                 ],
                 publicHeadersPath:"components/schemes/Typography/src/"),
