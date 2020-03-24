@@ -62,7 +62,8 @@ let package = Package(
                 path: "components/schemes/Typography/",
                 sources: [
                     "src/",
-                    "src/Scheming/",
+                    "src/Scheming/MaterialTypographyScheme+Scheming.h",
+                    "src/Scheming/MDCTypographyScheming.h"
                     "src/BasicFontScheme/"
                 ],
                 publicHeadersPath:"components/schemes/Typography/src/"),
@@ -159,7 +160,8 @@ let package = Package(
         .target(name: "Availability", 
                 path: "components/Availability/",
                 sources:[
-                    "src/"
+                    "src/MaterialAvailability.h",
+                    "src/MDCAvailability.h"
                 ],
                 publicHeadersPath:"components/Availability/src/"),
         .target(name: "Application", 
