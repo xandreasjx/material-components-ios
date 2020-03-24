@@ -15,13 +15,13 @@ let package = Package(
     targets: [
         .target(name: "MaterialTextFields", 
                 dependencies:[
-                    .target("AnimationTiming"),
-                    .target("Buttons"),
-                    .target("Elevation"),
-                    .target("Typography"),
-                    .target("Math"),
-                    .target("Palettes"),
-                    .target("MDFInternationalization")
+                    .target(name:"AnimationTiming"),
+                    .target(name:"Buttons"),
+                    .target(name:"Elevation"),
+                    .target(name:"Typography"),
+                    .target(name:"Math"),
+                    .target(name:"Palettes"),
+                    .target(name:"MDFInternationalization")
                 ], 
                 path: "components/TextFields/src/",
                 sources: [
@@ -141,7 +141,7 @@ let package = Package(
                 ], 
                 publicHeadersPath:"src/"),
         .target(name: "Availability", 
-                path: "components/Availability/src/",
+                path: "components/Availability/",
                 sources: [
                     "components/Availability/src/*.{h,m}",
                 ],
