@@ -102,10 +102,6 @@ let package = Package(
                     "components/Palettes/src/*.{h,m}",
                     "components/Palettes/src/private/*.{h,m}"
                 ]),
-        .target(name: "MDFInternationalization", 
-                pa,th: "components/MDFInternationalization")
-        .target(name: "MDFTextAccessibility", 
-                pa,th: "components/MDFTextAccessibility")
         .target(name: "Ink", 
                 path: "components/Ink", 
                 publicHeadersPath:"components/Ink/src",
