@@ -107,7 +107,7 @@ let package = Package(
                     .target(name:"Color"),
                     .target(name:"Math")
                 ], 
-                path: "components/Ripple",
+                path: "components/Ripple/",
                 sources: [
                     "src/*.{h,m}",
                     "src/private/*.{h,m}"
