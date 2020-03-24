@@ -49,7 +49,10 @@ let package = Package(
                 path: "components/schemes/Shape/src/"),
         .target(name: "ShapeLibrary",
                 path: "components/ShapeLibrary/src/"),
-        .target(name: "ColorScheme",
+        .target(name: "ColorScheme", 
+                dependencies:[
+                    .target(name:"Color")
+                ],
                 path: "components/schemes/Color/",
                 sources: [
                     "src"
