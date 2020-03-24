@@ -21,7 +21,7 @@ let package = Package(
                     .target(name:"Typography"),
                     .target(name:"Math"),
                     .target(name:"Palettes"),
-                    .package(name:"MDFInternationalization")
+                    "MDFInternationalization"
                 ], 
                 path: "components/TextFields/src/",
                 sources: [
@@ -33,8 +33,8 @@ let package = Package(
                 path: "components/AnimationTiming/src/"),
         .target(name: "Buttons",
                 dependencies: [
-                    .package(name: "MDFInternationalization"),
-                    .package(name: "MDFTextAccessibility"),
+                    "MDFInternationalization",
+                    "MDFTextAccessibility",
                     .target(name:"Elevation"),
                     .target(name:"Ink"),
                     .target(name:"Ripple"),
@@ -64,8 +64,8 @@ let package = Package(
                 publicHeadersPath:"src/"),
         .target(name: "Typography",
                 dependencies: [
-                    .target("Application"),
-                    .target("Math")
+                    .target(name: "Application"),
+                    .target(name: "Math")
                 ], 
                 path: "components/Typography",
                 sources: [
@@ -130,9 +130,9 @@ let package = Package(
                 publicHeadersPath:"src/"),
         .target(name: "Shapes",
                 dependencies:[
-                    .target("ShadowLayer"),
-                    .target("Color"),
-                    .target("Math")
+                    .target(name:"ShadowLayer"),
+                    .target(name:"Color"),
+                    .target(name:"Math")
                 ], 
                 path: "components/Shapes/",
                 sources: [
