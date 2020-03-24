@@ -21,7 +21,7 @@ let package = Package(
                     .target(name:"Typography"),
                     .target(name:"Math"),
                     .target(name:"Palettes"),
-                    .target(name:"MDFInternationalization")
+                    .package(name:"MDFInternationalization")
                 ], 
                 path: "components/TextFields/src/",
                 sources: [
@@ -33,16 +33,16 @@ let package = Package(
                 path: "components/AnimationTiming/src/"),
         .target(name: "Buttons",
                 dependencies: [
-                    "MDFInternationalization",
-                    "MDFTextAccessibility",
-                    "Elevation",
-                    "Ink",
-                    "Ripple",
-                    "ShadowElevations",
-                    "ShadowLayer",
-                    "Shapes",
-                    "Typography",
-                    "Math"
+                    .package(name: "MDFInternationalization"),
+                    .package(name: "MDFTextAccessibility"),
+                    .target(name:"Elevation"),
+                    .target(name:"Ink"),
+                    .target(name:"Ripple"),
+                    .target(name:"ShadowElevations"),
+                    .target(name:"ShadowLayer"),
+                    .target(name:"Shapes"),
+                    .target(name:"Typography"),
+                    .target(name:"Math")
                 ], 
                 path: "components/Buttons/",
                 sources: [
@@ -52,9 +52,9 @@ let package = Package(
                 publicHeadersPath:"src/"),
         .target(name: "Elevation",
                 dependencies: [
-                    "Availability",
-                    "Color",
-                    "Math"
+                    .target(name:"Availability"),
+                    .target(name:"Color"),
+                    .target(name:"Math")
                 ], 
                 path: "components/Elevation/",
                 sources: [
@@ -64,8 +64,8 @@ let package = Package(
                 publicHeadersPath:"src/"),
         .target(name: "Typography",
                 dependencies: [
-                    "Application",
-                    "Math"
+                    .target("Application"),
+                    .target("Math")
                 ], 
                 path: "components/Typography",
                 sources: [
@@ -93,9 +93,9 @@ let package = Package(
                 publicHeadersPath:"components/Palettes/src/"),
         .target(name: "Ink",
                 dependencies: [
-                    "Availability",
-                    "Color",
-                    "Math"
+                    .target(name: "Availability"),
+                    .target(name: "Color"),
+                    .target(name: "Math")
                 ], 
                 path: "components/Ink/",
                 sources: [
@@ -105,10 +105,10 @@ let package = Package(
                 publicHeadersPath:"src/"),
         .target(name: "Ripple",
                 dependencies:[
-                    "AnimationTiming",
-                    "Availability",
-                    "Color",
-                    "Math"
+                    .target(name:"AnimationTiming"),
+                    .target(name:"Availability"),
+                    .target(name:"Color"),
+                    .target(name:"Math")
                 ], 
                 path: "components/Ripple",
                 sources: [
@@ -130,9 +130,9 @@ let package = Package(
                 publicHeadersPath:"src/"),
         .target(name: "Shapes",
                 dependencies:[
-                    "ShadowLayer",
-                    "Color",
-                    "Math"
+                    .target("ShadowLayer"),
+                    .target("Color"),
+                    .target("Math")
                 ], 
                 path: "components/Shapes/",
                 sources: [
