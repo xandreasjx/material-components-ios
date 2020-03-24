@@ -146,12 +146,7 @@ let package = Package(
                     .target(name:"Color"),
                     .target(name:"Math")
                 ], 
-                path: "components/Shapes/",
-                sources: [
-                    "src/*.{h,m}",
-                    "src/private/*.{h,m}"
-                ], 
-                publicHeadersPath:"src/"),
+                path: "components/Shapes/src/"),
         .target(name: "Availability", 
                 path: "components/Availability/",
                 sources: [
