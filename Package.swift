@@ -8,14 +8,11 @@ let package = Package(
         .library(name: "MaterialTextFields", targets: ["MaterialTextField"]),
     ],
     dependecies:[
-        .package("../material-internationalization-ios", 
-        ),
-        .package("../material-text-accessibility-ios",        
-        )
+        .package(path:"../material-internationalization-ios"),
+        .package(path:"../material-text-accessibility-ios")
     ],
     targets: [
         .target(name: "MaterialTextFields", 
-                path: "components/TextFields", 
                 dependecies:[
                     "AnimationTiming",
                     "Buttons",
@@ -25,25 +22,20 @@ let package = Package(
                     "Palettes",
                     "MDFInternationalization"
                 ], 
-                publicHeadersPath:"components/TextFields/src",
+                path: "components/TextFields",
                 sources: [
                     "components/TextFields/src/*.{h,m}",
                     "components/TextFields/src/private/*.{h,m}"
-                ]),
+                ], 
+                publicHeadersPath:"components/TextFields/src"),
         .target(name: "AnimationTiming", 
-                path: "components/AnimationTiming", 
-                publicHeadersPath:"components/AnimationTiming/src",
+                path: "components/AnimationTiming",
                 sources: [
                     "components/AnimationTiming/src/*.{h,m}",
                     "components/AnimationTiming/src/private/*.{h,m}"
-                ]),
-        .target(name: "Buttons", 
-                path: "components/Buttons", 
-                publicHeadersPath:"components/Buttons/src",
-                sources: [
-                    "components/Buttons/src/*.{h,m}",
-                    "components/Buttons/src/private/*.{h,m}"
-                ],
+                ], 
+                publicHeadersPath:"components/AnimationTiming/src"),
+        .target(name: "Buttons",
                 dependecies: [
                     "MDFInternationalization",
                     "MDFTextAccessibility",
@@ -55,113 +47,119 @@ let package = Package(
                     "Shapes",
                     "Typography",
                     "Math"
-                ]),
-        .target(name: "Elevation", 
-                path: "components/Elevation", 
-                publicHeadersPath:"components/Elevation/src",
+                ], 
+                path: "components/Buttons",
+                sources: [
+                    "components/Buttons/src/*.{h,m}",
+                    "components/Buttons/src/private/*.{h,m}"
+                ], 
+                publicHeadersPath:"components/Buttons/src"),
+        .target(name: "Elevation",
+                dependecies: [
+                    "Availability",
+                    "Color",
+                    "Math"
+                ], 
+                path: "components/Elevation",
                 sources: [
                     "components/Elevation/src/*.{h,m}",
                     "components/Elevation/src/private/*.{h,m}"
-                ],
-                dependecies: [
-                    "Availability",
-                    "Color",
-                    "Math"
-                ]),
-        .target(name: "Typography", 
-                path: "components/Typography", 
-                publicHeadersPath:"components/Typography/src",
-                sources: [
-                    "components/Typography/src/*.{h,m}",
-                    "components/Typography/src/private/*.{h,m}"
-                ],
+                ], 
+                publicHeadersPath:"components/Elevation/src"),
+        .target(name: "Typography",
                 dependecies: [
                     "Application",
                     "Math"
-                ]),
+                ], 
+                path: "components/Typography",
+                sources: [
+                    "components/Typography/src/*.{h,m}",
+                    "components/Typography/src/private/*.{h,m}"
+                ], 
+                publicHeadersPath:"components/Typography/src"),
         .target(name: "Math", 
-                path: "components/private/Math", 
-                publicHeadersPath:"components/private/Math/src",
+                path: "components/private/Math",
                 sources: [
                     "components/private/Math/src/*.{h,m}",
-                ]),
-        .target(name: "Color", 
-                path: "components/schemes/Color", 
-                publicHeadersPath:"components/schemes/Color/src",
-                sources: [
-                    "components/schemes/Color/src/*.{h,m}"
-                ],
+                ], 
+                publicHeadersPath:"components/private/Math/src"),
+        .target(name: "Color",
                 dependecies: [
                     "Availability",
                     "Color"
-                ]),
+                ], 
+                path: "components/schemes/Color",
+                sources: [
+                    "components/schemes/Color/src/*.{h,m}"
+                ], 
+                publicHeadersPath:"components/schemes/Color/src"),
         .target(name: "Palettes", 
                 path: "components/Palettes",
-                publicHeadersPath:"components/Palettes/src",
                 sources: [
                     "components/Palettes/src/*.{h,m}",
                     "components/Palettes/src/private/*.{h,m}"
-                ]),
-        .target(name: "Ink", 
-                path: "components/Ink", 
-                publicHeadersPath:"components/Ink/src",
-                sources: [
-                    "components/Ink/src/*.{h,m}",
-                    "components/Ink/src/private/*.{h,m}"
                 ],
+                publicHeadersPath:"components/Palettes/src"),
+        .target(name: "Ink",
                 dependecies: [
                     "Availability",
                     "Color",
                     "Math"
-                ]),
-        .target(name: "Ripple", 
-                path: "components/Ripple", 
-                publicHeadersPath:"components/Ripple/src",
+                ], 
+                path: "components/Ink",
                 sources: [
-                    "components/Ripple/src/*.{h,m}",
-                    "components/Ripple/src/private/*.{h,m}"
-                ],
+                    "components/Ink/src/*.{h,m}",
+                    "components/Ink/src/private/*.{h,m}"
+                ], 
+                publicHeadersPath:"components/Ink/src"),
+        .target(name: "Ripple",
                 dependecies:[
                     "AnimationTiming",
                     "Availability",
                     "Color",
                     "Math"
-                ]),
-        .target(name: "ShadowElevations", 
-                path: "components/ShadowElevations", 
-                publicHeadersPath:"components/ShadowElevations/src",
-                sources: [
-                    "components/ShadowElevations/src/*.{h,m}",
-                ]),
-        .target(name: "ShadowLayer", 
-                path: "components/ShadowLayer", 
-                publicHeadersPath:"components/ShadowLayer/src",
-                sources: [
-                    "components/ShadowLayer/src/*.{h,m}",
-                ]),
-        .target(name: "Shapes", 
-                path: "components/Shapes", 
-                publicHeadersPath:"components/Ripple/src",
+                ], 
+                path: "components/Ripple",
                 sources: [
                     "components/Ripple/src/*.{h,m}",
                     "components/Ripple/src/private/*.{h,m}"
-                ],
+                ], 
+                publicHeadersPath:"components/Ripple/src"),
+        .target(name: "ShadowElevations", 
+                path: "components/ShadowElevations",
+                sources: [
+                    "components/ShadowElevations/src/*.{h,m}",
+                ], 
+                publicHeadersPath:"components/ShadowElevations/src"),
+        .target(name: "ShadowLayer", 
+                path: "components/ShadowLayer",
+                sources: [
+                    "components/ShadowLayer/src/*.{h,m}",
+                ], 
+                publicHeadersPath:"components/ShadowLayer/src"),
+        .target(name: "Shapes",
                 dependecies:[
                     "ShadowLayer",
                     "Color",
                     "Math"
-                ]),
+                ], 
+                path: "components/Shapes",
+                sources: [
+                    "components/Ripple/src/*.{h,m}",
+                    "components/Ripple/src/private/*.{h,m}"
+                ], 
+                publicHeadersPath:"components/Ripple/src"),
         .target(name: "Availability", 
-                path: "components/Availability", 
-                publicHeadersPath:"components/Availability/src",
+                path: "components/Availability",
                 sources: [
                     "components/Availability/src/*.{h,m}",
-                ]),
+                ], 
+                publicHeadersPath:"components/Availability/src"),
         .target(name: "Application", 
-                path: "components/private/Application", 
-                publicHeadersPath:"components/private/Application/src",
+                path: "components/private/Application",
                 sources: [
                     "components/private/Application/src/*.{h,m}"
-                ])
+                ], 
+                publicHeadersPath:"components/private/Application/src")
     ]
 )
