@@ -38,15 +38,17 @@ let package = Package(
         .target(name: "ContainerScheme",
                 path: "components/schemes/Container/src/"),
         .target(name: "ShapeScheme",
-                path: "components/schemes/Shape/src/"),
+                path: "components/schemes/Shape/src/", 
+                dependencies:[
+                    .target(name:"Shapes")
+                ]),
         .target(name: "ColorScheme",
                 path: "components/schemes/Color/src/"),
         .target(name: "TypographyScheme",
                 path: "components/schemes/Typography/",
                 sources: [
                     "src",
-                ],
-                publicHeadersPath:"components/schemes/Typography/src/"),
+                ]),
         .target(name: "Buttons",
                 dependencies: [
                     "MDFInternationalization",
@@ -135,7 +137,8 @@ let package = Package(
                     .target(name:"Color"),
                     .target(name:"Math")
                 ], 
-                path: "components/Shapes/src/"),
+                path: "components/Shapes/src/",
+                publicHeadersPath:"components/Shapes/src/"),
         .target(name: "Availability", 
                 path: "components/Availability/src/"),
         .target(name: "Application", 
