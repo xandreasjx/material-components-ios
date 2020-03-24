@@ -61,8 +61,8 @@ let package = Package(
         .target(name: "TypographyScheme",
                 path: "components/schemes/Typography/",
                 sources: [
-                    "src",
-                    "src/schemes",
+                    "src/",
+                    "src/Scheming",
                     "src/BasicFontScheme"
                 ]),
         .target(name: "Buttons",
