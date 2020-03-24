@@ -47,6 +47,8 @@ let package = Package(
                 dependencies:[
                     .target(name:"Shapes")
                 ]),
+        .target(name: "ShapeLibrary",
+                path: "components/ShapeLibrary/src/"),
         .target(name: "ColorScheme",
                 path: "components/schemes/Color/src/",
                 publicHeadersPath:"components/schemes/Color/src/"),
