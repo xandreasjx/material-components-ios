@@ -86,16 +86,12 @@ let package = Package(
                 ], 
                 publicHeadersPath:"src/"),
         .target(name: "Math", 
-                path: "components/private/Math/src/",
-                sources: [
-                    "components/private/Math/src/*.{h,m}",
-                ], 
-                publicHeadersPath:"components/private/Math/src/"),
+                path: "components/private/Math/src/"),
         .target(name: "Color",
                 dependencies: [
                     "Availability",
                 ], 
-                path: "components/private/Color"),
+                path: "components/private/Color/src/"),
         .target(name: "Palettes", 
                 path: "components/Palettes/src/",
                 sources: [
@@ -148,11 +144,7 @@ let package = Package(
                 ], 
                 path: "components/Shapes/src/"),
         .target(name: "Availability", 
-                path: "components/Availability/",
-                sources: [
-                    "components/Availability/src/*.{h,m}",
-                ],
-                publicHeadersPath:"components/Availability/src/"),
+                path: "components/Availability/src"),
         .target(name: "Application", 
                 path: "components/private/Application/src/",
                 publicHeadersPath:"components/private/Application/src/")
