@@ -161,7 +161,7 @@ let package = Package(
         .target(name: "Availability", 
                 path: "components/Availability/",
                 sources:[
-                    "src"
+                    "src/"
                 ],
                 publicHeadersPath: "src"),
         .target(name: "Application", 
