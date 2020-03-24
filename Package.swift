@@ -110,10 +110,9 @@ let package = Package(
                 ], 
                 path: "components/Ink/",
                 sources: [
-                    "src/*.{h,m}",
-                    "src/private/*.{h,m}"
+                    "src"
                 ], 
-                publicHeadersPath:"src/"),
+                publicHeadersPath:"components/Ink/src/"),
         .target(name: "Ripple",
                 dependencies:[
                     .target(name:"AnimationTiming"),
@@ -123,22 +122,21 @@ let package = Package(
                 ], 
                 path: "components/Ripple/",
                 sources: [
-                    "src/*.{h,m}",
-                    "src/private/*.{h,m}"
+                    "src"
                 ], 
-                publicHeadersPath:"src/"),
+                publicHeadersPath:"components/Ripple/src/"),
         .target(name: "ShadowElevations", 
-                path: "components/ShadowElevations",
+                path: "components/ShadowElevations/",
                 sources: [
-                    "src/*.{h,m}",
+                    "src",
                 ], 
-                publicHeadersPath:"src/"),
+                publicHeadersPath:"components/ShadowElevations/src/"),
         .target(name: "ShadowLayer", 
-                path: "components/ShadowLayer",
+                path: "components/ShadowLayer/",
                 sources: [
-                    "src/*.{h,m}",
+                    "src",
                 ], 
-                publicHeadersPath:"src/"),
+                publicHeadersPath:"components/ShadowLayer/src/"),
         .target(name: "Shapes",
                 dependencies:[
                     .target(name:"ShadowLayer"),
