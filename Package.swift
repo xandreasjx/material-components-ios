@@ -105,7 +105,7 @@ let package = Package(
                 path: "components/private/Math/src/"),
         .target(name: "Color",
                 dependencies: [
-                    "Availability",
+                    .target(name:"Availability"),
                 ], 
                 path: "components/private/Color/src/",
                 publicHeadersPath:"components/private/Color/src/"),
