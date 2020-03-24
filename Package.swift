@@ -5,7 +5,7 @@ import PackageDescription
 let package = Package(
     name: "Material Components iOS",
     products: [
-        .library(name: "MaterialTextFields", targets: ["MaterialTextField"]),
+        .library(name: "MaterialTextFields", targets: ["MaterialTextFields"]),
     ],
     dependencies:[
         .package(url:"file:///Users/bernix01/extras/material-internationalization-ios", from: "2.0.0"),
