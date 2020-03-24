@@ -58,16 +58,14 @@ let package = Package(
                     "src"
                 ],
                 publicHeadersPath:"src"),
-        .target(name: "TypographyScheme",
+        .target(name: "TypographyScheme", 
+                dependencies:[
+                    .target(name:"Typography")
+                ],
                 path: "components/schemes/Typography/",
                 sources: [
-                    "src/MaterialTypographyScheme.h",
-                    "src/MDCLegacyFontScheme.h",
-                    "src/MDCTypographyScheme.h",
-                    "src/MDCTypographyScheme.m",
                     "src/Scheming/MaterialTypographySchemeScheming.h",
                     "src/Scheming/MDCTypographyScheming.h",
-                    "src/BasicFontScheme/"
                 ],
                 publicHeadersPath:"src"),
         .target(name: "Buttons",
