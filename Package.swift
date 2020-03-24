@@ -42,7 +42,7 @@ let package = Package(
         .target(name: "ColorScheme",
                 path: "components/schemes/Color/src/"),
         .target(name: "TypographyScheme",
-                path: "components/schemes/Container/src/"),
+                path: "components/schemes/Typography/src/"),
         .target(name: "Buttons",
                 dependencies: [
                     "MDFInternationalization",
