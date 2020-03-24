@@ -56,12 +56,8 @@ let package = Package(
                     .target(name:"Typography"),
                     .target(name:"Math")
                 ], 
-                path: "components/Buttons/",
-                sources: [
-                    "src/*.{h,m}",
-                    "src/private/*.{h,m}"
-                ], 
-                publicHeadersPath:"src/"),
+                path: "components/Buttons/src/",
+                publicHeadersPath:"components/Buttons/src/"),
         .target(name: "Elevation",
                 dependencies: [
                     .target(name:"Availability"),
@@ -79,12 +75,8 @@ let package = Package(
                     .target(name: "Application"),
                     .target(name: "Math")
                 ], 
-                path: "components/Typography",
-                sources: [
-                    "src/*.{h,m}",
-                    "src/private/*.{h,m}"
-                ], 
-                publicHeadersPath:"src/"),
+                path: "components/Typography/src/", 
+                publicHeadersPath:"components/Typography/src/"),
         .target(name: "Math", 
                 path: "components/private/Math/src/"),
         .target(name: "Color",
@@ -95,10 +87,6 @@ let package = Package(
                 publicHeadersPath:"components/private/Color/src/"),
         .target(name: "Palettes", 
                 path: "components/Palettes/src/",
-                sources: [
-                    "components/Palettes/src/src/*.{h,m}",
-                    "components/Palettes/src/src/private/*.{h,m}"
-                ],
                 publicHeadersPath:"components/Palettes/src/"),
         .target(name: "Ink",
                 dependencies: [
