@@ -35,18 +35,18 @@ let package = Package(
                 // publicHeadersPath: "components/TextFields/src/"),
         .target(name: "AnimationTiming",
                 path: "components/AnimationTiming/src/"),
-        .target(name: "ContainerScheme",
-                path: "components/schemes/Container/src/", 
+        .target(name: "ContainerScheme", 
                 dependencies:[
                     .target(name:"ColorScheme"),
                     .target(name:"ShapeScheme"),
                     .target(name:"TypographyScheme")
-                ]),
-        .target(name: "ShapeScheme",
-                path: "components/schemes/Shape/src/", 
+                ],
+                path: "components/schemes/Container/src/"),
+        .target(name: "ShapeScheme", 
                 dependencies:[
                     .target(name:"Shapes")
-                ]),
+                ],
+                path: "components/schemes/Shape/src/"),
         .target(name: "ShapeLibrary",
                 path: "components/ShapeLibrary/src/"),
         .target(name: "ColorScheme",
