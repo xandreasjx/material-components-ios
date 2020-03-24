@@ -36,14 +36,20 @@ let package = Package(
         .target(name: "AnimationTiming",
                 path: "components/AnimationTiming/src/"),
         .target(name: "ContainerScheme",
-                path: "components/schemes/Container/src/"),
+                path: "components/schemes/Container/src/", 
+                dependencies:[
+                    .target(name:"ColorScheme"),
+                    .target(name:"ShapeScheme"),
+                    .target(name:"TypographyScheme")
+                ]),
         .target(name: "ShapeScheme",
                 path: "components/schemes/Shape/src/", 
                 dependencies:[
                     .target(name:"Shapes")
                 ]),
         .target(name: "ColorScheme",
-                path: "components/schemes/Color/src/"),
+                path: "components/schemes/Color/src/",
+                publicHeadersPath:"components/schemes/Color/src/"),
         .target(name: "TypographyScheme",
                 path: "components/schemes/Typography/",
                 sources: [
