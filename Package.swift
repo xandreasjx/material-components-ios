@@ -62,9 +62,10 @@ let package = Package(
                 path: "components/schemes/Typography/",
                 sources: [
                     "src/",
-                    "src/Scheming",
-                    "src/BasicFontScheme"
-                ]),
+                    "src/Scheming/",
+                    "src/BasicFontScheme/"
+                ],
+                publicHeadersPath:"components/schemes/Typography/src/"),
         .target(name: "Buttons",
                 dependencies: [
                     "MDFInternationalization",
