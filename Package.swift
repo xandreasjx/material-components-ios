@@ -6,15 +6,20 @@ let package = Package(
     name: "Material Components iOS",
     platforms: [ .iOS(.v10) ],
     products: [
-        .library(name: "MaterialComponents", targets: ["MaterialComponents", "Availability"]),
+        .library(name: "MaterialComponents", targets: ["MaterialComponents"]),
     ],
     dependencies:[
         .package(url:"file:///Users/bernix01/extras/material-internationalization-ios", from: "2.0.0"),
         .package(url:"file:///Users/bernix01/extras/material-text-accessibility-ios", from: "2.0.0")
     ],
     targets: [
+        .target(name: "AvailabilityT", 
+                path: "components/Availability/",
+                sources:["src"],
+                publicHeadersPath:"src"),
         .target(name: "MaterialComponents", 
                 dependencies:[
+                    .target(name:"AvailabilityT"),
                     .target(name:"AnimationTiming"),
                     .target(name:"Buttons"),
                     .target(name:"Elevation"),
@@ -103,7 +108,7 @@ let package = Package(
                 publicHeadersPath:"src"),
         .target(name: "Elevation",
                 dependencies: [
-                    .target(name:"Availability"),
+                    .target(name:"AvailabilityT"),
                     .target(name:"Color"),
                     .target(name:"Math")
                 ], 
@@ -136,7 +141,7 @@ let package = Package(
                 publicHeadersPath:"src"),
         .target(name: "Ink",
                 dependencies: [
-                    .target(name: "Availability"),
+                    .target(name: "AvailabilityT"),
                     .target(name: "Color"),
                     .target(name: "Math")
                 ], 
@@ -148,7 +153,7 @@ let package = Package(
         .target(name: "Ripple",
                 dependencies:[
                     .target(name:"AnimationTiming"),
-                    .target(name:"Availability"),
+                    .target(name:"AvailabilityT"),
                     .target(name:"Color"),
                     .target(name:"Math")
                 ], 
@@ -183,13 +188,9 @@ let package = Package(
                     "src"
                 ], 
                 publicHeadersPath:"src"),
-        .target(name: "Availability", 
-                path: "components/Availability/", 
-                sources:[],
-                publicHeadersPath: "src"),
         .target(name: "Color",
                 dependencies: [
-                    .target(name:"Availability")
+                    .target(name:"AvailabilityT")
                 ], 
                 path: "components/private/Color/",
                 sources: [
