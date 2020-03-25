@@ -6,15 +6,18 @@ let package = Package(
     name: "Material Components iOS",
     platforms: [ .iOS(.v10) ],
     products: [
-        .library(name: "MaterialComponents", targets: ["MaterialComponents"]),
+        .library(name: "MaterialComponents", targets: ["MaterialComponents","Buttons"]),
+        //
+        .library(name: "Availaibility", targets: ["AvailabilityT"])
     ],
     dependencies:[
         .package(url:"file:///Users/bernix01/extras/material-internationalization-ios", from: "2.0.0"),
         .package(url:"file:///Users/bernix01/extras/material-text-accessibility-ios", from: "2.0.0")
     ],
     targets: [
-        .target(name: "AvailabilityT", 
-                path: "components/Availability/"),
+        .target(name: "AvailabilityT",
+                dependencies:[],
+                path: "components/AvailabilityT"),
         .target(name: "MaterialComponents", 
                 dependencies:[
                     .target(name:"AvailabilityT"),
@@ -29,63 +32,82 @@ let package = Package(
                     .target(name:"TypographyScheme"),
                     .target(name:"ColorScheme"),
                     "MDFInternationalization"
-                ], 
+            ],
                 path: "components/TextFields/",
+                exclude:[
+                    "src/ColorThemer",
+                    "src/Theming",
+                    "src/private/MDCTextField+Testing.h"
+            ],
                 sources: [
                     "src"
-                ], 
-                publicHeadersPath:"src"),
+            ]),
         .target(name: "AnimationTiming",
                 path: "components/AnimationTiming/",
                 sources: [
                     "src"
-                ], 
+            ],
                 publicHeadersPath:"src"),
         .target(name: "ContainerScheme", 
                 dependencies:[
                     .target(name:"ColorScheme"),
                     .target(name:"ShapeScheme"),
-                    .target(name:"TypographyScheme")
-                ],
+                    .target(name:"TypographyScheme"),
+                    .target(name:"TypographySchemeBasicFontScheme")
+            ],
                 path: "components/schemes/Container/",
                 sources: [
                     "src"
-                ], 
+            ],
                 publicHeadersPath:"src"),
         .target(name: "ShapeScheme", 
                 dependencies:[
-                    .target(name:"Shapes")
-                ],
+                    .target(name:"Shapes"),
+                    .target(name:"ShapeLibrary")
+            ],
                 path: "components/schemes/Shape/",
                 sources: [
                     "src"
-                ], 
+            ],
                 publicHeadersPath:"src"),
         .target(name: "ShapeLibrary",
+                dependencies:[
+                    .target(name:"Shapes")
+            ],
                 path: "components/ShapeLibrary/",
                 sources: [
                     "src"
-                ], 
+            ],
                 publicHeadersPath:"src"),
         .target(name: "ColorScheme", 
                 dependencies:[
                     .target(name:"Color")
-                ],
-                path: "components/schemes/Color//",
+            ],
+                path: "components/schemes/Color/",
                 sources: [
                     "src"
-                ], 
+            ],
                 publicHeadersPath:"src"),
         .target(name: "TypographyScheme", 
                 dependencies:[
-                    .target(name:"Typography")
-                ],
+                    .target(name:"Typography"),
+                    .target(name:"TypographySchemeScheming"),
+                    .target(name:"TypographySchemeBasicFontScheme")
+            ],
                 path: "components/schemes/Typography/",
+                exclude:[
+                    "src/Scheming",
+                    "src/BasicFontScheme"
+            ],
                 sources: [
-                    "src/Scheming/MaterialTypographySchemeScheming.h",
-                    "src/Scheming/MDCTypographyScheming.h",
-                ],
+                    "src",
+        ],
                 publicHeadersPath:"src"),
+        .target(name: "TypographySchemeScheming",
+                path: "components/schemes/Typography/src/Scheming/"
+                ),
+        .target(name: "TypographySchemeBasicFontScheme",
+                path: "components/schemes/Typography/src/BasicFontScheme/"),
         .target(name: "Buttons",
                 dependencies: [
                     "MDFInternationalization",
@@ -97,56 +119,68 @@ let package = Package(
                     .target(name:"ShadowLayer"),
                     .target(name:"Shapes"),
                     .target(name:"Typography"),
+                    .target(name:"ShapeScheme"),
+                    .target(name:"ContainerScheme"),
+                    .target(name:"TypographyScheme"),
+                    .target(name:"ColorScheme"),
                     .target(name:"Math")
-                ], 
+            ],
                 path: "components/Buttons/",
+                exclude: [
+                "src/ButtonThemer",
+                "src/ColorThemer",
+                "src/ShapeThemer",
+                "src/Theming",
+                "src/TitleColorAccessibilityMutator",
+                "src/TypographyThemer",
+            ],
                 sources: [
                     "src"
-                ], 
+            ],
                 publicHeadersPath:"src"),
         .target(name: "Elevation",
                 dependencies: [
                     .target(name:"AvailabilityT"),
                     .target(name:"Color"),
                     .target(name:"Math")
-                ], 
+            ],
                 path: "components/Elevation/",
                 sources: [
                     "src"
-                ], 
+            ],
                 publicHeadersPath:"src"),
         .target(name: "Typography",
                 dependencies: [
                     .target(name: "Application"),
                     .target(name: "Math")
-                ], 
+            ],
                 path: "components/Typography/",
                 sources: [
                     "src"
-                ], 
+            ],
                 publicHeadersPath:"src"),
         .target(name: "Math", 
                 path: "components/private/Math/",
                 sources: [
                     "src"
-                ], 
+            ],
                 publicHeadersPath:"src"),
         .target(name: "Palettes", 
                 path: "components/Palettes/",
                 sources: [
                     "src"
-                ], 
+            ],
                 publicHeadersPath:"src"),
         .target(name: "Ink",
                 dependencies: [
                     .target(name: "AvailabilityT"),
                     .target(name: "Color"),
                     .target(name: "Math")
-                ], 
+            ],
                 path: "components/Ink/",
                 sources: [
                     "src"
-                ], 
+            ],
                 publicHeadersPath:"src"),
         .target(name: "Ripple",
                 dependencies:[
@@ -154,52 +188,52 @@ let package = Package(
                     .target(name:"AvailabilityT"),
                     .target(name:"Color"),
                     .target(name:"Math")
-                ], 
+            ],
                 path: "components/Ripple/",
                 sources: [
                     "src"
-                ], 
+            ],
                 publicHeadersPath:"src"),
         .target(name: "ShadowElevations", 
                 path: "components/ShadowElevations/",
                 sources: [
                     "src",
-                ], 
+            ],
                 publicHeadersPath:"src"),
         .target(name: "ShadowLayer", 
                 dependencies: [
                     .target(name:"ShadowElevations")
-                ],
+            ],
                 path: "components/ShadowLayer/",
                 sources: [
                     "src"
-                ], 
+            ],
                 publicHeadersPath:"src"),
         .target(name: "Shapes",
                 dependencies:[
                     .target(name:"ShadowLayer"),
                     .target(name:"Color"),
                     .target(name:"Math")
-                ], 
+            ],
                 path: "components/Shapes/",
                 sources: [
                     "src"
-                ], 
+            ],
                 publicHeadersPath:"src"),
         .target(name: "Color",
                 dependencies: [
                     .target(name:"AvailabilityT")
-                ], 
+            ],
                 path: "components/private/Color/",
                 sources: [
                     "src"
-                ], 
+            ],
                 publicHeadersPath:"src"),
         .target(name: "Application", 
                 path: "components/private/Application/",
                 sources: [
                     "src"
-                ], 
+            ],
                 publicHeadersPath:"src")
     ]
 )

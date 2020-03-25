@@ -14,6 +14,8 @@
 
 #import <UIKit/UIKit.h>
 
+#import "MDCLegacyInkLayerDelegate.h"
+
 @class MDCLegacyInkLayerRipple;
 
 @protocol MDCLegacyInkLayerRippleDelegate <MDCLegacyInkLayerDelegate>
