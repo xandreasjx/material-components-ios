@@ -14,7 +14,7 @@
 
 #import "UIColor+MaterialDynamic.h"
 
-#import "MaterialAvailability.h"
+#import <MaterialComponents/MaterialAvailability.h>
 
 @implementation UIColor (MaterialDynamic)
 
