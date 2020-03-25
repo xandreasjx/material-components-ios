@@ -14,9 +14,7 @@ let package = Package(
     ],
     targets: [
         .target(name: "AvailabilityT", 
-                path: "components/Availability/",
-                sources:["src"],
-                publicHeadersPath:"src"),
+                path: "components/Availability/"),
         .target(name: "MaterialComponents", 
                 dependencies:[
                     .target(name:"AvailabilityT"),
