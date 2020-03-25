@@ -6,7 +6,7 @@ let package = Package(
     name: "Material Components iOS",
     platforms: [ .iOS(.v10) ],
     products: [
-        .library(name: "MaterialComponents", targets: ["MaterialComponents"]),
+        .library(name: "MaterialComponents", targets: ["MaterialComponents", "Availability"]),
     ],
     dependencies:[
         .package(url:"file:///Users/bernix01/extras/material-internationalization-ios", from: "2.0.0"),
