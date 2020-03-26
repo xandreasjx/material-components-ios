@@ -9,8 +9,8 @@ let package = Package(
         .library(name: "MaterialComponents", targets: ["MaterialTextFields"]),
     ],
     dependencies:[
-        .package(url:"file:///Users/bernix01/extras/material-internationalization-ios", from: "2.0.0"),
-        .package(url:"file:///Users/bernix01/extras/material-text-accessibility-ios", from: "2.0.0")
+        .package(url:"https://github.com/grupopulpo/material-text-accessibility-ios", from: "2.0.0"),
+        .package(url:"https://github.com/grupopulpo/material-internationalization-ios", from: "2.0.0")
     ],
     targets: [
         .target(name: "AvailabilityT",
