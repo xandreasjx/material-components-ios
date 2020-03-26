@@ -6,9 +6,7 @@ let package = Package(
     name: "Material Components iOS",
     platforms: [ .iOS(.v10) ],
     products: [
-        .library(name: "MaterialComponents", targets: ["MaterialComponents","Buttons"]),
-        //
-        .library(name: "Availaibility", targets: ["AvailabilityT"])
+        .library(name: "MaterialComponents", targets: ["MaterialTextFields"]),
     ],
     dependencies:[
         .package(url:"file:///Users/bernix01/extras/material-internationalization-ios", from: "2.0.0"),
@@ -18,7 +16,7 @@ let package = Package(
         .target(name: "AvailabilityT",
                 dependencies:[],
                 path: "components/AvailabilityT"),
-        .target(name: "MaterialComponents", 
+        .target(name: "MaterialTextFields",
                 dependencies:[
                     .target(name:"AvailabilityT"),
                     .target(name:"AnimationTiming"),
