@@ -6,6 +6,5 @@ module MaterialComponents {
   }
 
 
-  module * { export * }
   export *
 }
