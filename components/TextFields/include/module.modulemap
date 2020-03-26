@@ -1,4 +1,4 @@
-module MaterialTextFields {
+module MaterialComponents {
   requires objc, objc_arc
 
   explicit module MaterialTextFields {
