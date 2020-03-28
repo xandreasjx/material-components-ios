@@ -28,7 +28,6 @@
 
 #pragma mark - Class Properties
 
-static CGFloat MDCTextInputOutlinedTextFieldFloatingPlaceholderPadding = 8;
 static const CGFloat MDCTextInputOutlinedTextFieldFullPadding = 16;
 static const CGFloat MDCTextInputOutlinedTextFieldNormalPlaceholderPadding = 20;
 static const CGFloat MDCTextInputOutlinedTextFieldThreeQuartersPadding = 12;
@@ -80,16 +79,27 @@ static UIRectCorner _roundedCornersDefault = UIRectCornerAllCorners;
 + (void)setRoundedCornersDefault:(UIRectCorner)roundedCornersDefault {
   _roundedCornersDefault = roundedCornersDefault;
 }
+
+
 @synthesize radius = _radius;
 
 - (CGFloat)radius {
   return _radius;
 }
 
-- (void)setradius:(CGFloat)radius {
+- (void)setRadius:(CGFloat)radius {
   _radius = radius;
 }
 
+@synthesize floatingPlaceholderPadding = _floatingPlaceholderPadding;
+
+- (CGFloat)floatingPlaceholderPadding {
+  return _floatingPlaceholderPadding;
+}
+
+- (void)setFloatingPlaceholderPadding:(CGFloat)floatingPlaceholderPadding {
+    _floatingPlaceholderPadding = floatingPlaceholderPadding;
+}
 
 
 #pragma mark - MDCTextInputPositioningDelegate
@@ -195,16 +205,16 @@ static UIRectCorner _roundedCornersDefault = UIRectCornerAllCorners;
                              systemLayoutSizeFittingSize:UILayoutFittingCompressedSize]
                              .width *
                          (CGFloat)self.floatingPlaceholderScale.floatValue;
-      placeholderWidth += MDCTextInputOutlinedTextFieldFloatingPlaceholderPadding;
+      placeholderWidth += _floatingPlaceholderPadding;
     }
 
     path = [self roundedPathFromRect:[self borderRect]
                        withTextSpace:placeholderWidth
                        leadingOffset:MDCTextInputOutlinedTextFieldFullPadding -
-                                     MDCTextInputOutlinedTextFieldFloatingPlaceholderPadding / 2];
+                                     _floatingPlaceholderPadding / 2];
   } else {
-    CGSize cornerRadius = CGSizeMake(MDCTextInputControllerBaseDefaultBorderRadius,
-                                     MDCTextInputControllerBaseDefaultBorderRadius);
+    CGSize cornerRadius = CGSizeMake(_radius,
+                                     _radius);
     path = [UIBezierPath bezierPathWithRoundedRect:[self borderRect]
                                  byRoundingCorners:self.roundedCorners
                                        cornerRadii:cornerRadius];
@@ -238,7 +248,7 @@ static UIRectCorner _roundedCornersDefault = UIRectCornerAllCorners;
                         withTextSpace:(CGFloat)textSpace
                         leadingOffset:(CGFloat)offset {
   UIBezierPath *path = [[UIBezierPath alloc] init];
-  CGFloat radius = MDCTextInputControllerBaseDefaultBorderRadius;
+  CGFloat radius = _radius;
   CGFloat yOffset = f.origin.y;
   CGFloat xOffset = f.origin.x;
 

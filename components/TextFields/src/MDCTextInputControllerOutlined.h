@@ -64,4 +64,8 @@
 /// The radiuss
 @property(nonatomic) CGFloat radius;
 
+/// The Floating placeholder padding
+@property(nonatomic) CGFloat floatingPlaceholderPadding;
+
+
 @end
