@@ -28,13 +28,13 @@
 
 #pragma mark - Class Properties
 
-static const CGFloat MDCTextInputOutlinedTextFieldFloatingPlaceholderPadding = 8;
+static CGFloat MDCTextInputOutlinedTextFieldFloatingPlaceholderPadding = 8;
 static const CGFloat MDCTextInputOutlinedTextFieldFullPadding = 16;
 static const CGFloat MDCTextInputOutlinedTextFieldNormalPlaceholderPadding = 20;
 static const CGFloat MDCTextInputOutlinedTextFieldThreeQuartersPadding = 12;
 
 static UIRectCorner _roundedCornersDefault = UIRectCornerAllCorners;
-static CGFloat _roudedCornerRadius = 20;
+static CGFloat _roundedCornerRadius = 20;
 
 @interface MDCTextInputControllerOutlined ()
 
@@ -82,12 +82,13 @@ static CGFloat _roudedCornerRadius = 20;
 }
 
 
-+ (CGFloat)roudedCornerRadius {
-  return _roudedCornerRadius;
++ (CGFloat)roundedCornerRadius {
+  return _roundedCornerRadius;
 }
 
-+ (void)roudedCornerRadius:(UIRectCorner)roudedCornerRadius {
-  _roudedCornerRadius = roudedCornerRadius;
++ (void)setRoundedCornerRadius:(CGFloat)roundedCornerRadius {
+  MDCTextInputOutlinedTextFieldFloatingPlaceholderPadding = roundedCornerRadius * 2
+  _roundedCornerRadius = roundedCornerRadius;
 }
 
 #pragma mark - MDCTextInputPositioningDelegate
@@ -201,8 +202,8 @@ static CGFloat _roudedCornerRadius = 20;
                        leadingOffset:MDCTextInputOutlinedTextFieldFullPadding -
                                      MDCTextInputOutlinedTextFieldFloatingPlaceholderPadding / 2];
   } else {
-    CGSize cornerRadius = CGSizeMake(_roudedCornerRadius,
-                                     _roudedCornerRadius);
+    CGSize cornerRadius = CGSizeMake(_roundedCornerRadius,
+                                     _roundedCornerRadius);
     path = [UIBezierPath bezierPathWithRoundedRect:[self borderRect]
                                  byRoundingCorners:self.roundedCorners
                                        cornerRadii:cornerRadius];
@@ -236,7 +237,7 @@ static CGFloat _roudedCornerRadius = 20;
                         withTextSpace:(CGFloat)textSpace
                         leadingOffset:(CGFloat)offset {
   UIBezierPath *path = [[UIBezierPath alloc] init];
-  CGFloat radius = _roudedCornerRadius;
+  CGFloat radius = _roundedCornerRadius;
   CGFloat yOffset = f.origin.y;
   CGFloat xOffset = f.origin.x;
 
