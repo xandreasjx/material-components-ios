@@ -61,4 +61,7 @@
  */
 @interface MDCTextInputControllerOutlined : MDCTextInputControllerBase
 
+/// The radiuss
+@property(nonatomic) CGFloat radius;
+
 @end
