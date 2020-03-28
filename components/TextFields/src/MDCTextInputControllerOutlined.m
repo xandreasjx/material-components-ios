@@ -87,7 +87,7 @@ static CGFloat _roundedCornerRadius = 20;
 }
 
 + (void)setRoundedCornerRadius:(CGFloat)roundedCornerRadius {
-  MDCTextInputOutlinedTextFieldFloatingPlaceholderPadding = roundedCornerRadius * 2
+    MDCTextInputOutlinedTextFieldFloatingPlaceholderPadding = roundedCornerRadius * 2;
   _roundedCornerRadius = roundedCornerRadius;
 }
 
