@@ -41,6 +41,8 @@ static CGFloat _roundedCornerRadius = 20;
 @property(nonatomic, strong) NSLayoutConstraint *placeholderCenterY;
 @property(nonatomic, strong) NSLayoutConstraint *placeholderLeading;
 
+
+@property(nonatomic, assign) CGFloat roundedCornerRadius;
 @end
 
 @implementation MDCTextInputControllerOutlined

@@ -61,9 +61,4 @@
  */
 @interface MDCTextInputControllerOutlined : MDCTextInputControllerBase
 
-/**
- Value for rounded corners radious.
- Default is 40.
- */
-@property(class, nonatomic, assign) CGFloat roundedCornerRadius;
 @end
