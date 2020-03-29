@@ -28,7 +28,6 @@
 
 #pragma mark - Class Properties
 
-CGFloat MDCTextInputOutlinedTextFieldFullPadding = 16;
 
 static const CGFloat MDCTextInputOutlinedTextFieldNormalPlaceholderPadding = 20;
 static const CGFloat MDCTextInputOutlinedTextFieldThreeQuartersPadding = 12;
@@ -84,6 +83,7 @@ static UIRectCorner _roundedCornersDefault = UIRectCornerAllCorners;
 
 @synthesize radius = _radius;
 
+
 - (CGFloat)radius {
   return _radius;
 }
@@ -102,6 +102,16 @@ static UIRectCorner _roundedCornersDefault = UIRectCornerAllCorners;
     _floatingPlaceholderPadding = floatingPlaceholderPadding;
 }
 
+@synthesize MDCTextInputOutlinedTextFieldFullPadding = _MDCTextInputOutlinedTextFieldFullPadding;
+
+- (CGFloat)MDCTextInputOutlinedTextFieldFullPadding {
+  return _MDCTextInputOutlinedTextFieldFullPadding;
+}
+
+- (void)setMDCTextInputOutlinedTextFieldFullPadding:(CGFloat)MDCTextInputOutlinedTextFieldFullPadding {
+    _MDCTextInputOutlinedTextFieldFullPadding = MDCTextInputOutlinedTextFieldFullPadding;
+}
+
 
 #pragma mark - MDCTextInputPositioningDelegate
 
@@ -109,8 +119,8 @@ static UIRectCorner _roundedCornersDefault = UIRectCornerAllCorners;
   CGRect leadingViewRect = defaultRect;
   CGFloat xOffset = (self.textInput.mdf_effectiveUserInterfaceLayoutDirection ==
                      UIUserInterfaceLayoutDirectionRightToLeft)
-                        ? -1 * MDCTextInputOutlinedTextFieldFullPadding
-                        : MDCTextInputOutlinedTextFieldFullPadding;
+                        ? -1 * _MDCTextInputOutlinedTextFieldFullPadding
+                        : _MDCTextInputOutlinedTextFieldFullPadding;
 
   leadingViewRect = CGRectOffset(leadingViewRect, xOffset, 0);
 
@@ -122,7 +132,7 @@ static UIRectCorner _roundedCornersDefault = UIRectCornerAllCorners;
 }
 
 - (CGFloat)leadingViewTrailingPaddingConstant {
-  return MDCTextInputOutlinedTextFieldFullPadding;
+  return _MDCTextInputOutlinedTextFieldFullPadding;
 }
 
 - (CGRect)trailingViewRectForBounds:(CGRect)bounds defaultRect:(CGRect)defaultRect {
@@ -167,15 +177,15 @@ static UIRectCorner _roundedCornersDefault = UIRectCornerAllCorners;
 // clang-format on
 - (UIEdgeInsets)textInsets:(UIEdgeInsets)defaultInsets
     withSizeThatFitsWidthHint:(CGFloat)widthHint {
-  defaultInsets.left = MDCTextInputOutlinedTextFieldFullPadding;
-  defaultInsets.right = MDCTextInputOutlinedTextFieldFullPadding;
+  defaultInsets.left = _MDCTextInputOutlinedTextFieldFullPadding;
+  defaultInsets.right = _MDCTextInputOutlinedTextFieldFullPadding;
   UIEdgeInsets textInsets = [super textInsets:defaultInsets withSizeThatFitsWidthHint:widthHint];
   CGFloat textVerticalOffset = self.textInput.placeholderLabel.font.lineHeight * (CGFloat)0.5;
 
   CGFloat scale = UIScreen.mainScreen.scale;
   CGFloat placeholderEstimatedHeight =
       MDCCeil(self.textInput.placeholderLabel.font.lineHeight * scale) / scale;
-  textInsets.top = [self borderHeight] - MDCTextInputOutlinedTextFieldFullPadding -
+  textInsets.top = [self borderHeight] - _MDCTextInputOutlinedTextFieldFullPadding -
                    placeholderEstimatedHeight + textVerticalOffset;
 
   return textInsets;
@@ -211,7 +221,7 @@ static UIRectCorner _roundedCornersDefault = UIRectCornerAllCorners;
 
     path = [self roundedPathFromRect:[self borderRect]
                        withTextSpace:placeholderWidth
-                       leadingOffset:MDCTextInputOutlinedTextFieldFullPadding -
+                       leadingOffset:_MDCTextInputOutlinedTextFieldFullPadding -
                                      _floatingPlaceholderPadding / 2];
   } else {
     CGSize cornerRadius = CGSizeMake(_radius,
@@ -318,7 +328,7 @@ static UIRectCorner _roundedCornersDefault = UIRectCornerAllCorners;
   }
   self.placeholderCenterY.constant = placeholderConstant;
 
-  CGFloat placeholderLeadingConstant = MDCTextInputOutlinedTextFieldFullPadding;
+  CGFloat placeholderLeadingConstant = _MDCTextInputOutlinedTextFieldFullPadding;
 
   if ([self.textInput conformsToProtocol:@protocol(MDCLeadingViewTextInput)]) {
     UIView<MDCLeadingViewTextInput> *leadingViewInput =
