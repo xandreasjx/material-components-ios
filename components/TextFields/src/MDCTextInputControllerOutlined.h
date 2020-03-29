@@ -67,5 +67,6 @@
 /// The Floating placeholder padding
 @property(nonatomic) CGFloat floatingPlaceholderPadding;
 
+extern CGFloat MDCTextInputOutlinedTextFieldFullPadding;
 
 @end

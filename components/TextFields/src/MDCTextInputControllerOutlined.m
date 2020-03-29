@@ -28,7 +28,8 @@
 
 #pragma mark - Class Properties
 
-static const CGFloat MDCTextInputOutlinedTextFieldFullPadding = 16;
+CGFloat MDCTextInputOutlinedTextFieldFullPadding = 16;
+
 static const CGFloat MDCTextInputOutlinedTextFieldNormalPlaceholderPadding = 20;
 static const CGFloat MDCTextInputOutlinedTextFieldThreeQuartersPadding = 12;
 
